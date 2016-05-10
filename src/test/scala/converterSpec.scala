@@ -98,4 +98,12 @@ class converterSpec extends FlatSpec with Matchers {
   it should "convert 2 to II" in {
     arabicConverter(2) shouldBe "II"
   }
+
+  it should "convert 4 to IV" in {
+    arabicConverter(4) shouldBe "IV"
+  }
+
+  it should "convert 1989 to MCMLXXXIX" in {
+    arabicConverter(1989) shouldBe "MCMLXXXIX"
+  }
 }
