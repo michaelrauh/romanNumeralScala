@@ -71,4 +71,27 @@ class converterSpec extends FlatSpec with Matchers {
     arabicConverter(1) shouldBe "I"
   }
 
+  it should "convert 5 to V" in {
+    arabicConverter(5) shouldBe "V"
+  }
+
+  it should "convert 10 to X" in {
+    arabicConverter(10) shouldBe "X"
+  }
+
+  it should "convert 50 to L" in {
+    arabicConverter(50) shouldBe "L"
+  }
+
+  it should "convert 100 to C" in {
+    arabicConverter(100) shouldBe "C"
+  }
+
+  it should "convert 500 to D" in {
+    arabicConverter(500) shouldBe "D"
+  }
+
+  it should "convert 1000 to M" in {
+    arabicConverter(1000) shouldBe "M"
+  }
 }

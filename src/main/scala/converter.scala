@@ -50,7 +50,8 @@ object RomanToArabic {
 }
 
 object ArabicToRoman{
+  val arabic_to_roman = Map(1 -> 'I', 5 -> 'V', 10 -> 'X', 50 -> 'L', 100 -> 'C', 500 -> 'D', 1000 -> 'M')
   def apply(arabic:Int): String = {
-    return "I"
+    return arabic_to_roman(arabic).toString
   }
 }
