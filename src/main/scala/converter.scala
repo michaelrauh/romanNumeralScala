@@ -10,6 +10,17 @@ object RomanToArabic {
     }
   }
 
+  def subtractRule(previous_roman: Char, current_roman: Char) : Int = {
+    val roman_list = roman_to_arabic.keys.toList
+    val previous_roman_index = roman_list.indexOf(previous_roman)
+    val roman_index = roman_list.indexOf(current_roman)
+    if ((previous_roman_index - roman_index) > 1){
+      return 4
+    }else{
+      return 1
+    }
+  }
+
   val roman_to_arabic = Map('I' -> 1, 'V' -> 5, 'X' -> 10, 'L' -> 50, 'C' -> 100, 'D' -> 500, 'M' -> 1000)
   def apply(roman: String) : Int = {
     val characters = roman.toList.reverse
@@ -21,13 +32,7 @@ object RomanToArabic {
       val current = roman_to_arabic(i)
       if (current < previous)
       {
-        val previous_roman_index = roman_to_arabic.keys.toList.indexOf(previous_roman)
-        val roman_index = roman_to_arabic.keys.toList.indexOf(i)
-        if ((previous_roman_index - roman_index) > 1){
-          repeat = 4
-        }else{
-          repeat = 1
-        }
+        repeat = subtractRule(previous_roman, i)
         total = total - current
       }else if (current == previous) {
         repeat = repeatRule(current, repeat)
