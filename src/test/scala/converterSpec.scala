@@ -1,9 +1,11 @@
 import converter.RomanToArabic
+import converter.ArabicToRoman
 import org.scalatest._
 
 class converterSpec extends FlatSpec with Matchers {
 
   val romanConverter = RomanToArabic
+  val arabicConverter = ArabicToRoman
 
   "A Roman to Arabic Converter" should "convert I to 1" in {
     romanConverter("I") shouldBe 1
@@ -63,6 +65,10 @@ class converterSpec extends FlatSpec with Matchers {
 
   it should "convert MCMLXXXIX to 1989" in {
     romanConverter("MCMLXXXIX") shouldBe 1989
+  }
+
+  "An Arabic to Roman converter" should "convert 1 to I" in {
+    arabicConverter(1) shouldBe "I"
   }
 
 }

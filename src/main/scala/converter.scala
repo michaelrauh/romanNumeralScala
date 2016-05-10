@@ -48,3 +48,9 @@ object RomanToArabic {
     return total
   }
 }
+
+object ArabicToRoman{
+  def apply(arabic:Int): String = {
+    return "I"
+  }
+}
