@@ -6,11 +6,17 @@ object RomanToArabic {
   def apply(roman: String) : Int = {
     val characters = roman.toList.reverse
     var total = 0
+    var previous = 0
     characters.foreach {i =>
       val current = roman_to_arabic(i)
-      total = total + current
+      if (current < previous)
+      {
+        total = total - current
+      }else{
+        total = total + current
+      }
+      previous = current
     }
     return total
   }
-
 }

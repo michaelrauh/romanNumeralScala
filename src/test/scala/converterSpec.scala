@@ -36,4 +36,8 @@ class converterSpec extends FlatSpec with Matchers {
   it should "convert II to 2" in {
     romanConverter("II") shouldBe 2
   }
+
+  it should "convert IV to 4" in {
+    romanConverter("IV") shouldBe 4
+  }
 }
