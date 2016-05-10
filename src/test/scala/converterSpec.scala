@@ -1,11 +1,11 @@
-import converter.Roman
+import converter.RomanToArabic
 import org.scalatest._
 
 class converterSpec extends FlatSpec with Matchers {
 
-  // val babysitterCalculator = Calculator
-  //
-  // "A Babysitter" should "be paid $12 for the hour from 6 to 7" in {
-  //   babysitterCalculator(18, 19, 22) shouldBe 12
-  // }
+  val romanConverter = RomanToArabic
+
+  "A Roman to Arabic Converter" should "convert I to 1" in {
+    romanConverter("I") shouldBe 1
+  }
 }

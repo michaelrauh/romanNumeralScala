@@ -1,3 +1,9 @@
 package converter
 
-object Roman{}
+object RomanToArabic {
+
+  def apply(roman: String) : Int = {
+    return 1
+  }
+
+}
