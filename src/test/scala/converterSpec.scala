@@ -94,4 +94,8 @@ class converterSpec extends FlatSpec with Matchers {
   it should "convert 1000 to M" in {
     arabicConverter(1000) shouldBe "M"
   }
+
+  it should "convert 2 to II" in {
+    arabicConverter(2) shouldBe "II"
+  }
 }
