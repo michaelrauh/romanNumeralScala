@@ -48,4 +48,8 @@ class converterSpec extends FlatSpec with Matchers {
   it should "refuse to convert VV and return 0" in {
     romanConverter("VV") shouldBe 0
   }
+
+  it should "refuse to convert IL and return 0" in {
+    romanConverter("IL") shouldBe 0
+  }
 }

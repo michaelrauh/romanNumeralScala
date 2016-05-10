@@ -16,12 +16,19 @@ object RomanToArabic {
     var total = 0
     var previous = 0
     var repeat = 1
+    var previous_roman = 'I'
     characters.foreach {i =>
       val current = roman_to_arabic(i)
       if (current < previous)
       {
+        val previous_roman_index = roman_to_arabic.keys.toList.indexOf(previous_roman)
+        val roman_index = roman_to_arabic.keys.toList.indexOf(i)
+        if ((previous_roman_index - roman_index) > 1){
+          repeat = 4
+        }else{
+          repeat = 1
+        }
         total = total - current
-        repeat = 1
       }else if (current == previous) {
         repeat = repeatRule(current, repeat)
         total = total + current
@@ -30,6 +37,7 @@ object RomanToArabic {
         total = total + current
       }
       previous = current
+      previous_roman = i
     }
     if (repeat > 3){return 0}
     return total
