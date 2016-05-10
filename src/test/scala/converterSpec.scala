@@ -44,4 +44,8 @@ class converterSpec extends FlatSpec with Matchers {
   it should "refuse to convert IIII and return 0" in {
     romanConverter("IIII") shouldBe 0
   }
+
+  it should "refuse to convert VV and return 0" in {
+    romanConverter("VV") shouldBe 0
+  }
 }

@@ -15,6 +15,9 @@ object RomanToArabic {
         total = total - current
         repeat = 1
       }else if (current == previous) {
+        if(List(5, 50, 500).contains(current)){
+          repeat = repeat + 5
+        }
         total = total + current
         repeat = repeat + 1
       }else{
