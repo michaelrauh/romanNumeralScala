@@ -12,4 +12,28 @@ class converterSpec extends FlatSpec with Matchers {
   it should "convert V to 5" in {
     romanConverter("V") shouldBe 5
   }
+
+  it should "convert X to 10" in {
+    romanConverter("X") shouldBe 10
+  }
+
+  it should "convert L to 50" in {
+    romanConverter("L") shouldBe 50
+  }
+
+  it should "convert C to 100" in {
+    romanConverter("C") shouldBe 100
+  }
+
+  it should "convert D to 500" in {
+    romanConverter("D") shouldBe 500
+  }
+
+  it should "convert M to 1000" in {
+    romanConverter("M") shouldBe 1000
+  }
+
+  it should "convert II to 2" in {
+    romanConverter("II") shouldBe 2
+  }
 }
