@@ -2,6 +2,14 @@ package converter
 
 object RomanToArabic {
 
+  def repeatRule(current: Int, repeat: Int) : Int = {
+    if(List(5, 50, 500).contains(current)){
+      return 4
+    }else{
+      return repeat + 1
+    }
+  }
+
   val roman_to_arabic = Map('I' -> 1, 'V' -> 5, 'X' -> 10, 'L' -> 50, 'C' -> 100, 'D' -> 500, 'M' -> 1000)
   def apply(roman: String) : Int = {
     val characters = roman.toList.reverse
@@ -15,11 +23,8 @@ object RomanToArabic {
         total = total - current
         repeat = 1
       }else if (current == previous) {
-        if(List(5, 50, 500).contains(current)){
-          repeat = repeat + 5
-        }
+        repeat = repeatRule(current, repeat)
         total = total + current
-        repeat = repeat + 1
       }else{
         repeat = 1
         total = total + current
