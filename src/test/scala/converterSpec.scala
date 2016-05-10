@@ -52,4 +52,17 @@ class converterSpec extends FlatSpec with Matchers {
   it should "refuse to convert IL and return 0" in {
     romanConverter("IL") shouldBe 0
   }
+
+  it should "refuse to convert XXC and return 0" in {
+    romanConverter("XXC") shouldBe 0
+  }
+
+  it should "convert MLXVI to 1066" in {
+    romanConverter("MLXVI") shouldBe 1066
+  }
+
+  it should "convert MCMLXXXIX to 1989" in {
+    romanConverter("MCMLXXXIX") shouldBe 1989
+  }
+
 }
