@@ -7,16 +7,23 @@ object RomanToArabic {
     val characters = roman.toList.reverse
     var total = 0
     var previous = 0
+    var repeat = 1
     characters.foreach {i =>
       val current = roman_to_arabic(i)
       if (current < previous)
       {
         total = total - current
+        repeat = 1
+      }else if (current == previous) {
+        total = total + current
+        repeat = repeat + 1
       }else{
+        repeat = 1
         total = total + current
       }
       previous = current
     }
+    if (repeat > 3){return 0}
     return total
   }
 }
